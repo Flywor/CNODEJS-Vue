@@ -13,8 +13,6 @@ export default (url, obj, method = 'post') => {
     fetchInit.body = (typeof obj === 'object') ? JSON.stringify(obj) : obj
   }
 
-  console.log(fetchUrl, fetchInit)
-
   return fetch(fetchUrl, fetchInit).then(res => res.json()).then((rs) => {
     if (rs.success) {
       return rs.result || rs.data || rs || {}

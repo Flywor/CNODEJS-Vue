@@ -9,8 +9,76 @@
     outline: none;
     word-break: break-all;
     word-wrap: break-word;
+    box-sizing: border-box;
 }
 html, body{
     height:100%;
-    font-size: 14px;
+    font-size: 12px;
+}
+#app, #app > div{
+  height:100%;
+}
+
+// loading 遮罩层
+.shade{
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height: 100%;
+  background-color:black;
+  opacity: .1;
+  z-index: 9999999999999;
+}
+.loading{
+  width: 4em;
+  height: 4em;
+  border-radius: 50%;
+  margin: -2em 0 0 -2em;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  
+  border:2px solid lightgreen;
+  -webkit-animation: turn 2s linear infinite;
+  overflow: visible;
+  z-index: 99999999999999;
+
+  span{
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    background: lightgreen;
+    position: absolute;
+    left: 50%;
+    margin-top: 1.5em;
+    margin-left: 1.5em;
+    -webkit-animation: changeBgColor 2s linear infinite;
+  }
+}
+@-webkit-keyframes changeBgColor{
+  0%{
+    background: lightblue;
+  }
+  50%{
+    background: lightseagreen;
+  }
+  100%{
+    background: lightblue;
+  }
+}
+@-webkit-keyframes turn{
+  0%{
+    -webkit-transform: rotate(0deg);
+    border-color: lightblue;
+  }
+  50%{
+    -webkit-transform: rotate(360deg);
+    border-color: lightseagreen;
+  }
+  100%{
+    -webkit-transform: rotate(720deg);
+    border-color: lightblue;
+  }
 }

@@ -12,5 +12,14 @@ export default new Router({
         resolve(require('../views/index.vue'))
       })
     }
+  },
+  {
+    path: '/topic/:id',
+    name: 'topic',
+    component (resolve) {
+      require.ensure(['../views/topic.vue'], () => {
+        resolve(require('../views/topic.vue'))
+      })
+    }
   }]
 })

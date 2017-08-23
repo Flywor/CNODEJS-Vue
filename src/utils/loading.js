@@ -11,7 +11,7 @@ export default {
     this.shade = shade
   },
   hide: () => {
-    document.body.removeChild(this.div)
-    document.body.removeChild(this.shade)
+    this.div && document.body.removeChild(this.div)
+    this.shade && document.body.removeChild(this.shade)
   }
 }

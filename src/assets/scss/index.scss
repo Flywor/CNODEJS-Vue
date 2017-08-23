@@ -15,6 +15,11 @@ html, body{
     height:100%;
     font-size: 12px;
 }
+@media screen and (max-width: 320px) {
+  html, body{
+    font-size: 10px;
+  }
+}
 #app, #app > div{
   height:100%;
 }
@@ -54,10 +59,10 @@ html, body{
     left: 50%;
     margin-top: 1.5em;
     margin-left: 1.5em;
-    -webkit-animation: changeBgColor 2s linear infinite;
+    animation: changeBgColor 2s linear infinite;
   }
 }
-@-webkit-keyframes changeBgColor{
+@keyframes changeBgColor{
   0%{
     background: lightblue;
   }
@@ -68,7 +73,7 @@ html, body{
     background: lightblue;
   }
 }
-@-webkit-keyframes turn{
+@keyframes turn{
   0%{
     -webkit-transform: rotate(0deg);
     border-color: lightblue;
@@ -81,4 +86,35 @@ html, body{
     -webkit-transform: rotate(720deg);
     border-color: lightblue;
   }
+}
+
+.listLoad{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border:1px solid lightgreen;
+  animation: turn 2s linear infinite;
+  vertical-align: top;
+  color: white;
+  &:before{
+    content: ' ';
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: lightgreen;
+    position: absolute;
+    left: 50%;
+    margin-top: 5px;
+    margin-left: 12px;
+    animation: changeBgColor 2s linear infinite;
+  }
+}
+
+.success, .faild{
+  width: 30px;
+  height: 30px;
+  vertical-align: top;
+  margin-top: 15px;
+  color: white;
 }

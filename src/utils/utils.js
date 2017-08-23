@@ -1,4 +1,4 @@
-const throttle = {
+export const throttle = {
   time: {
     now: 0,
     remaining: 0,
@@ -9,11 +9,10 @@ const throttle = {
     let tm = t.time
     tm.now = now()
     if (!tm.previous) tm.previous = tm.now
+    console.log(tm.now - tm.previous)
     tm.remaining = wait - (tm.now - tm.previous)
     if (tm.remaining > 0) {
       return
-    } else {
-      tm.previous = tm.now
     }
     if (tm.remaining < 1) {
       tm.remaining = wait
@@ -24,8 +23,5 @@ const throttle = {
 }
 
 const now = () => {
-  let tmp = Date.parse(new Date()).toString()
-  return tmp.substr(0, 10)
+  return new Date().getTime()
 }
-
-exports.throttle = throttle

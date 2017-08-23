@@ -22,6 +22,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
 import timeformat from '../utils/timeformat.js'
 export default {
   filters: {
@@ -29,7 +30,10 @@ export default {
       return timeformat.getLastTimeStr(time, isFromNow)
     }
   },
-  props: ['items', 'tabs'],
+  computed: mapState([
+    'tabs',
+    'items'
+  ]),
   methods: {
     toTopic (id) {
       this.$router.push({
@@ -46,7 +50,7 @@ export default {
       })
       return temp
     }
-  }
+  },
 }
 </script>
 

@@ -1,6 +1,6 @@
-# y
+# CNODEJS-Vue
 
-> y
+一个使用Vue搭建的DEMO项目，测试数据接口来源于 https://cnodejs.org/
 
 ## Build Setup
 
@@ -18,4 +18,4 @@ npm run build
 npm run build --report
 ```
 
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+该项目仅是用于本人对Vue.js进行探索的DEMO，不作于任何用途。

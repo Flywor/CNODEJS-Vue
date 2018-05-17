@@ -18,4 +18,4 @@ npm run build
 npm run build --report
 ```
 
-该项目仅是用于本人对Vue.js进行探索的DEMO，不作于任何用途。
+该项目仅是用于本人对Vue.js进行探索的DEMO，不作于其他用途。
